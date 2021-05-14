@@ -1,0 +1,48 @@
+# u = Userinfo(id=1, pw=1, name='이지은', age=17, address ='서울특별시 서대문구 연희동 85-9', birthday=dt.datetime(2004,5,3), gender=2, create_date=datetime.now())
+    # db.session.add(u)
+    # db.session.commit()
+    #
+    # u1 = Userinfo(id=2, pw=2, name='안성현', age=23, address='서울특별시 서대문구 대현동 145', birthday=dt.datetime(1998,4,25), gender=1, create_date=datetime.now())
+    # db.session.add(u1)
+    # db.session.commit()
+    #
+    # u2 = Userinfo(id=3, pw=3, name='김지수', age=17, address='서울특별시 마포구 공덕동 11-162', birthday=dt.datetime(2004,7,8), gender=2, create_date=datetime.now())
+    # db.session.add(u2)
+    # db.session.commit()
+    #
+    # u3 = Userinfo(id=4, pw=4, name='도유진', age=20, address='서울특별시 마포구 서교동 481-2', birthday=dt.datetime(2001,6,3), gender=2, create_date=datetime.now())
+    # db.session.add(u3)
+    # db.session.commit()
+    #
+    # u4 = Userinfo(id=5, pw=5, name='김준호', age=17, address='서울특별시 동작구 대방동 13-93', birthday=dt.datetime(2004,11,4), gender=1, create_date=datetime.now())
+    # db.session.add(u4)
+    # db.session.commit()
+    #
+    # u5 = Userinfo(id=6, pw=6, name='유가영', age=16, address='서울특별시 영등포구 신길동 4908-6', birthday=dt.datetime(2005,9,25), gender=2, create_date=datetime.now())
+    # db.session.add(u5)
+    # db.session.commit()
+    #
+    # u6 = Userinfo(id=7, pw=7, name='임한길', age=22, address='경기도 광명시 광명동 39-5 한양빌라 102호', birthday=dt.datetime(1999,8,9), gender=1, create_date=datetime.now())
+    # db.session.add(u6)
+    # db.session.commit()
+    #
+    # u7 = Userinfo(id=8, pw=8, name='정나연', age=17, address='서울특별시 금천구 독산동 1147 골드파크 1차', birthday=dt.datetime(2004,5,26), gender=2, create_date=datetime.now())
+    # db.session.add(u7)
+    # db.session.commit()
+    #
+    # u8 = Userinfo(id=9, pw=9, name='안수현', age=20, address='서울특별시 성동구 성수동1가 668-54', birthday=dt.datetime(2001,11,15), gender=2, create_date=datetime.now())
+    # db.session.add(u8)
+    # db.session.commit()
+    #
+    # u9 = Userinfo(id=10, pw=10, name='이주빈', age=23, address='서울특별시 성동구 성수동1가 668-54', birthday=dt.datetime(1998,4,11), gender=2, create_date=datetime.now())
+    # db.session.add(u9)
+    # db.session.commit()
+
+    # result=Userinfo.query.filter(Userinfo.age >= 19, Userinfo.gender == 1).all()
+    # print('성인 남자 : ', result)
+    # result=Userinfo.query.filter(Userinfo.age >= 19, Userinfo.gender == 2).all()
+    # print('성인 여자 : ', result)
+    # result = Userinfo.query.filter(Userinfo.age < 19, Userinfo.gender == 1).all()
+    # print('미성년 남자 : ', result)
+    # result = Userinfo.query.filter(Userinfo.age < 19, Userinfo.gender == 2).all()
+    # print('미성년 여자 : ', result)

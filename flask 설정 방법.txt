@@ -1,0 +1,42 @@
+[ flask 설정 ]-------------------------------------------------------------------------------------------
+1. url을 생성한다.
+2. views 폴더에 이름_views.py
+3. 블루프린트 설정
+4. route 설정
+5. __init__.py에 블루프린트 등록
+
+[ Flask-migrate 패키지 (DB 연결 순서) ]--------------------------------------------------------------
+1. config.py 생성 DB 정보 입력
+2. __init__.py db,migrate 설정
+3. 터미널창에서 flask db init 입력 ->migrations 폴더 생성 (migrations 폴더가 없으면 생성)
+4. 모델 (테이블) 코드 생성 (https://wikidocs.net/81045)
+5. 터미널창에서 flask db migrate (db 메모리에 생성)
+6. 터미널창에서 flask db upgrade (5번을 하드에 생성)
+
+# 구축된 DB 보는 프로그램 https://sqlitebrowser.org/dl/
+# 테이블 만드는것을 '모델'이라 한다.
+# class는 '설계도'와 같다.
+
+
+-------------------------------------------------------------------------------------------------
+# 첫 실행 세팅
+# set FLASK_APP=패키지/파일 이름
+# set FLASK_ENV=development
+
+# 1. 패키지 생성
+# 2. views 파일 생성
+# 3. views에 py파일 생성할때 이름은 주로 주소를 따라간다 ex)webtoon_views.py
+# 4. 뷰py에서 Blueprint를 생성하고 메인py에서 등록하고 실행
+
+# 데이터베이스 연결(flask-migrate 패키지 설정)
+# 1. config.py 생성 db정보 입력
+# 2. __init__.py db,migrate설정
+# 3. 터미널창에서 flask db init -> migrations 폴더 생성
+
+# flask-migrate 패키지 생성
+# 1. config.py생성   db정보입력
+# 2. __init__.py db,migrate 설정
+# 3. 터미널창에서 flask db init   -> migrations 폴더 생성
+# 4. models.py 테이블구조 생성
+# 5. flask db migrate -> 변경사항을 확인
+# 6. flask db upgrade -> 즉시 적용하기 위한 명령어

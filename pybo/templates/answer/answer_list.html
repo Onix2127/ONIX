@@ -1,0 +1,10 @@
+{% if answer_list %}   <!-- 만약 퀘스쳔 리스트가 있으면~ -->
+    <ul>
+        {% for answer in answer_list %}
+        <li><a href="{{ url_for('answer.adetail', answer_id = answer.id) }}">{{ answer.subject }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p> 답변이 없습니다. </p>
+{% endif %}

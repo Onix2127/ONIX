@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+    <h5 class="my-3 border-bottom pb-2"> 검색할 책이름을 입력해주세요 </h5>
+    <form method="post" class="post-form my-3">
+
+        {% for field,errors in form.errors.items() %}   <!-- 에러창 띄워주기 -->
+        <div class="alert alert-anger" role="alert">
+            <strong>{{ form[field].label }}</strong> : {{','.join(errors)}}
+        </div>
+        {% endfor %}
+
+        {{ form.csrf_token }}
+        {{ form.search.label }}
+        {{ form.search(class="form-control") }}
+
+        <br>
+        <button type="submit" class="btn btn-secondary btn-sm">검색하기</button>
+    </form>
+    {% if bookinfo_list %}
+    <table class="table table-hover text-lowercase">
+        <thead>
+        <tr class="thead-dark">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작가</th>
+            <th>가격</th>
+            <th>출판사</th>
+            <th>년도</th>
+            <th>표지</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in bookinfo_list %}
+            <tr>
+                <td scope="col">{{ loop.index }}</td>
+                <td>{{ book.title|safe }}</td>
+                <td>{{ book.author|safe }}</td>
+                <td>{{ book.price|safe }}</td>
+                <td>{{ book.publisher|safe }}</td>
+                <td>{{ book.pubdate }}</td>
+                <td><img src="{{ book.image }}" height="100" width="80"></img></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+    {% for book in bookinfo_list %}
+
+    {% endfor %}
+
+{% endblock %}

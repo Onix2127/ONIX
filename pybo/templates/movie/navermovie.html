@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+    <h5 class="my-3 border-bottom pb-2"> 검색할 영화 이름을 입력해주세요 </h5>
+    <form method="post" class="post-form my-3">
+
+        {% for field,errors in form.errors.items() %}   <!-- 에러창 띄워주기 -->
+        <div class="alert alert-anger" role="alert">
+            <strong>{{ form[field].label }}</strong> : {{','.join(errors)}}
+        </div>
+        {% endfor %}
+
+        {{ form.csrf_token }}
+        {{ form.moviesearch.label }}
+        {{ form.moviesearch(class="form-control") }}
+
+        <p></p>
+        <button type="submit" class="btn btn-secondary btn-sm">검색</button>
+    </form>
+    <br>
+
+    {% if movieinfo_list %}
+    <table class="table table-hover text-lowercase">
+        <thead>
+        <tr class="thead-dark align-middle">
+            <th style="width : 6%">번호</th>
+            <th style="width : 10%">포스터</th>
+            <th style="width : 5%">평점</th>
+            <th style="width : 20%">제목</th>
+            <th style="width : 10%">제작년도</th>
+            <th style="width : 10%">감독</th>
+            <th style="width : 39%">캐스팅</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for movie in movieinfo_list %}
+            <tr>
+                <td class="align-middle" scope="col">{{ loop.index }}</td>
+                <td class="align-middle"><img src="{{ movie.image }}"></img></td>
+                <td class="align-middle">{{ movie.userRating }}</td>
+                <td class="align-middle">{{ movie.title|safe }}</td>
+                <td class="align-middle">{{ movie.pubDate|safe }}</td>
+                <td class="align-middle">{{ movie.director|safe|replace("|"," ") }}</td>
+                <td class="align-middle">{{ movie.actor|safe|replace("|",". ") }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+    {% for book in bookinfo_list %}
+
+    {% endfor %}
+
+{% endblock %}
