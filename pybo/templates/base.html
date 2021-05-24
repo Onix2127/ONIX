@@ -41,6 +41,15 @@
             <a class="nav-link" href="{{ url_for('movierank.Navermovie') }}">영화검색</a>
         </li>
         <li class="navbar-nav">
+            <a class="nav-link" href="{{ url_for('chat.Bot') }}">챗봇</a>
+        </li>
+        <li class="navbar-nav">
+            <a class="nav-link" href="{{ url_for('chat.chatVote') }}">투표챗봇</a>
+        </li>
+        <li class="navbar-nav">
+            <a class="nav-link" href="{{ url_for('chat.Help') }}">HELP</a>
+        </li>
+        <li class="navbar-nav">
             <a class="nav-link" href="{{ url_for('auth.signup') }}">계정생성</a>
         </li>
         <li class="navbar-nav">
@@ -50,10 +59,20 @@
     {% endif %}
     </div>
 </nav>
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="TrotVote"
+  agent-id="74ec0efc-426f-48ea-bfe9-89a8ed1869e0"
+  language-code="ko"
+></df-messenger>
+
 {% block content %}
 {% endblock %}
 
 <script src="{{ url_for('static', filename='jquery-3.6.0.min.js') }}"></script>
 <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
 </body>
 </html>

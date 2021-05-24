@@ -33,3 +33,8 @@ class User(db.Model):
     username = db.Column(db.String(150), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+
+
+class Mrvote(db.Model):
+    name = db.Column(db.String(200), primary_key=True)
+    count = db.Column(db.Integer, nullable=False)
